@@ -3,18 +3,18 @@ services:
   - type: web
     name: alist
     env: docker
-    repo: https://github.com/alist-org/alist-render.git # optional
-    region: oregon # optional (defaults to oregon)
+    repo: https://github.com/tom-snow/alist-render.git # optional
+    region: singapore # optional (defaults to singapore)
     plan: free # optional (defaults to starter)
     healthCheckPath: /
     envVars:
       - key: PORT
         value: 5244
       - key: DB_TYPE
-        # value: sqlite3
+        # value: sqlite3 (default) / mysql / postgres
         sync: false
       - key: DB_HOST
-        # value: db_host
+        # value: db_host (if set DB_TYPE = sqlite3, this and below DB setting is not needed)
         sync: false
       - key: DB_PORT
         # value: 3306
